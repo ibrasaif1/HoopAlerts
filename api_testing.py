@@ -1,37 +1,3 @@
-# import requests
-
-# # Replace with your actual API URL and key
-# api_url = "https://api.sportradar.us/nba/trial/v7/en/games/20adc0dd-2579-445a-9f06-a5420b648645/pbp.json?api_key=ak3f6srtfgb2t8p4evdsyc52"
-
-# response = requests.get(api_url)
-# data = response.json()
-
-# # Replace this with the name of the player you're looking for
-# target_player_name = "Gordon Hayward"
-
-# event_count = 0
-
-# for period in data.get("periods", []):
-#     quarter_number = period.get("number")
-#     for event in period.get("events", []):
-#         if event.get("event_type") == "lineupchange":
-#             time_left = event.get("clock_decimal")
-#             for side in ['home', 'away']:
-#                 players = event.get("on_court", {}).get(side, {}).get("players", [])
-#                 for player in players:
-#                     if player.get("full_name") == target_player_name:
-#                         if quarter_number == 1:
-#                             print(f"{target_player_name} has been substituted into the game with {time_left} in the {quarter_number}st quarter")
-#                         elif quarter_number == 2:
-#                             print(f"{target_player_name} has been substituted into the game with {time_left} in the {quarter_number}nd quarter")
-#                         elif quarter_number == 3:
-#                             print(f"{target_player_name} has been substituted into the game with {time_left} in the {quarter_number}rd quarter")
-#                         elif quarter_number == 4:
-#                             print(f"{target_player_name} has been substituted into the game with {time_left} in the {quarter_number}th quarter")
-#                         event_count += 1
-
-# print(event_count, "events")
-
 import requests
 
 api_url = "https://api.sportradar.us/nba/trial/v7/en/games/20adc0dd-2579-445a-9f06-a5420b648645/pbp.json?api_key=ak3f6srtfgb2t8p4evdsyc52"
